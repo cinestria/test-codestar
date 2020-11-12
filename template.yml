@@ -30,6 +30,12 @@ Resources:
       FunctionName: !Sub 'awscodestar-${ProjectId}-lambda-HelloWorld'
       Handler: out/lambda.handler
       Runtime: nodejs12.x
+      VpcConfig:
+        SecurityGroupIds:
+          - sg-027bdf633a2be791b
+        SubnetIds:
+          - subnet-03d40e2124bbc3824
+          - subnet-09378a5d627773200
       Environment:
         Variables:
           NODE_ENV: production
