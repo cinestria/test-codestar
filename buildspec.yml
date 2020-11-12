@@ -16,7 +16,6 @@ phases:
   build:
     commands:
       - yarn build
-      - yarn test
       # Use AWS SAM to package the application using AWS CloudFormation
       - aws cloudformation package --template template.yml --s3-bucket $S3_BUCKET --output-template template-export.yml
 
