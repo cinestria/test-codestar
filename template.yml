@@ -33,6 +33,7 @@ Resources:
       Environment:
         Variables:
           NODE_ENV: production
+          STAGE_ENV: qa
       Role:
         Fn::GetAtt:
         - LambdaExecutionRole
