@@ -4,15 +4,18 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
+        "aws-lambda": "^1.0.6",
+        "aws-serverless-express": "3.1.3",
         "express": "4.16.2",
-        "aws-serverless-express": "3.1.3"
+        "typescript": "^4.0.5"
     },
     "devDependencies": {
         "mocha": "5.0.0",
-        "unit.js": "2.0.0",
-        "supertest": "3.0.0"
+        "supertest": "3.0.0",
+        "unit.js": "2.0.0"
     },
     "scripts": {
+        "build": "tsc",
         "test": "mocha --recursive tests"
     }
 }

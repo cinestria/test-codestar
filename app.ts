@@ -1,4 +1,4 @@
-var express = require('express');
+import * as express from 'express'
 var app = express();
 
 app.get('/', function(req, res) {
@@ -15,4 +15,4 @@ app.post('/', function(req, res) {
 
 
 // Export your Express configuration so that it can be consumed by the Lambda handler
-module.exports = app
+export default app
