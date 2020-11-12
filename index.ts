@@ -4,6 +4,8 @@ import * as awsServerlessExpress from 'aws-serverless-express'
 import app from './app'
 const server = awsServerlessExpress.createServer(app)
 
+console.log('LAMBDA INDEX !!!!')
+
 export const handler: Handler<any, any> = async (event: any, context: Context) => {
   return awsServerlessExpress.proxy(server, event, context)
 }

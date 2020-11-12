@@ -1,0 +1,58 @@
+{
+  // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+  // 기존 특성에 대한 설명을 보려면 가리킵니다.
+  // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Portal Remote QA",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/out/index.js",
+      "env" : {
+        "STAGE_ENV" : "remote-qa"
+      },
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "outputCapture": "std",
+      "internalConsoleOptions": "openOnSessionStart"
+    },
+    {
+      "name": "Launch Portal Remote PROD",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/../out/portal/index.js",
+      "env" : {
+        "STAGE_ENV" : "remote-prod"
+      },
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "outputCapture": "std",
+      "internalConsoleOptions": "openOnSessionStart"
+    },
+    {
+      "name": "SLS Test",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/.webpack/service/lambda.js",
+      "env" : {
+        "STAGE_ENV" : "remote-prod"
+      },
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "outputCapture": "std",
+      "internalConsoleOptions": "openOnSessionStart"
+    },
+    {
+      "name": "Webpack Test",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/../node_modules/webpack/bin/webpack.js",
+      "args": ["--config", "./webpack.config.js"],
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "outputCapture": "std",
+      "internalConsoleOptions": "openOnSessionStart"
+    }
+  ]
+}
