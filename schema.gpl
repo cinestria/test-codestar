@@ -1,0 +1,50 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type CreatePokemonDto {
+  _id: String!
+  name: String!
+  type: String!
+  pokedex: Float!
+  createdAt: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type FacebookAuthDto {
+  token: String!
+  name: String!
+  image: String!
+}
+
+type UserDto {
+  _id: String!
+  facebook: [FacebookAuthDto!]!
+  createdAt: DateTime!
+}
+
+type Query {
+  pokemon: [CreatePokemonDto!]!
+  me: [UserDto!]!
+}
+
+type Mutation {
+  createPokemon(data: InputPokemon!): CreatePokemonDto!
+  login(data: InputFacebookUser!): [String!]!
+}
+
+input InputPokemon {
+  name: String!
+  type: String!
+  pokedex: Float!
+}
+
+input InputFacebookUser {
+  token: String!
+  name: String!
+  image: String!
+}

@@ -1,0 +1,1 @@
+cmd /k node --max-old-space-size=4096 ./node_modules/typescript/bin/tsc -w
